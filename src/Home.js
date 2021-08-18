@@ -15,9 +15,6 @@ export default function Home() {
     const altura = useRef(new Animated.Value(330)).current;
     const topo = useRef(new Animated.Value(0)).current;
 
-   
-    const asde;
-
     window.cadastro = () => {
         Animated.sequence([
             Animated.timing(
@@ -29,7 +26,7 @@ export default function Home() {
 
                 }
             ),
-            
+
             Animated.timing(
                 topo,
                 {
@@ -69,7 +66,7 @@ export default function Home() {
 
                 }
             ),
-            
+
             Animated.timing(
                 topo,
                 {
@@ -112,7 +109,7 @@ export default function Home() {
             </View>
 
             <Animated.View style={[styles.container2, { bottom: baixo, height: altura }]}>
-                <Entrar/>
+                <Entrar />
             </Animated.View>
             <StatusBar style="dark" />
 
