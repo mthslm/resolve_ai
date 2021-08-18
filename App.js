@@ -1,12 +1,12 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import Preload from './src/Preload';
-import Login from './src/Login';
+import Home from './src/Home';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Login/>
+      <Home/>
     </View>
   );
 }

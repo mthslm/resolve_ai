@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "rai",
-    "slug": "rai",
+    "name": "Resolve Aí",
+    "slug": "resolve-ai",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -43,6 +43,8 @@
         "wasm",
         "svg"
       ]
-    }
+    },
+    "description": "",
+    "githubUrl": "https://github.com/mthslm/resolve_ai"
   }
 }
