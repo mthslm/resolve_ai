@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useRef } from 'react';
-import { Button, Text, StyleSheet, View, TextInput, KeyboardAvoidingView, TouchableOpacity, ImageBackground, Image, Animated } from 'react-native';
+import { Button, Text, StyleSheet, View, TextInput, KeyboardAvoidingView, TouchableOpacity, ImageBackground, Image, Animated, Appearance } from 'react-native';
 import Logo from '../assets/resolveailogocolorida.fw.svg';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { MaterialIcons, MaterialCommunityIcons, Entypo } from '@expo/vector-icons';
@@ -16,7 +16,7 @@ export default function Home() {
     const topo = useRef(new Animated.Value(0)).current;
 
    
-
+    const asde;
 
     window.cadastro = () => {
         Animated.sequence([
