@@ -14,91 +14,92 @@ export default function Home() {
     const baixo = useRef(new Animated.Value(100)).current;
     const altura = useRef(new Animated.Value(330)).current;
     const topo = useRef(new Animated.Value(0)).current;
-    const [tela, setTela] = useState(<Entrar/>);
+    const [tela, setTela] = useState(<Entrar />);
 
 
     window.cadastro = () => {
         setTimeout(() => {
-            setTela(<Cadastrar/>)
+            setTela(<Cadastrar />)
         }, 800),
-        Animated.sequence([
-            Animated.timing(
-                baixo,
-                {
-                    toValue: -280,
-                    duration: 800,
-                    useNativeDriver: false,
+            Animated.sequence([
+                Animated.timing(
+                    baixo,
+                    {
+                        toValue: -280,
+                        duration: 800,
+                        useNativeDriver: false,
 
-                }
-            ),
-            Animated.timing(
-                topo,
-                {
-                    toValue: -170,
-                    duration: 900,
-                    useNativeDriver: false,
-                }
-            ),
-            Animated.timing(
-                altura,
-                {
-                    toValue: 500,
-                    duration: 800,
-                    useNativeDriver: false,
-                }
-            ),
-            Animated.timing(
-                baixo,
-                {
-                    toValue: 100,
-                    duration: 500,
-                    useNativeDriver: false,
-                }
-            )
+                    }
+                ),
+                Animated.timing(
+                    topo,
+                    {
+                        toValue: -170,
+                        duration: 900,
+                        useNativeDriver: false,
+                    }
+                ),
+                Animated.timing(
+                    altura,
+                    {
+                        toValue: 500,
+                        duration: 800,
+                        useNativeDriver: false,
+                    }
+                ),
+                Animated.timing(
+                    baixo,
+                    {
+                        toValue: 100,
+                        duration: 500,
+                        useNativeDriver: false,
+                    }
+                )
 
-        ]).start();
+            ]).start();
     };
 
     window.logar = () => {
         setTimeout(() => {
-            setTela(<Entrar/>)
+            setTela(<Entrar />)
         }, 800),
-        Animated.sequence([
-            Animated.timing(
-                baixo,
-                {
-                    toValue: -420,
-                    duration: 800,
-                    useNativeDriver: false,
+            Animated.sequence([
+                Animated.timing(
+                    baixo,
+                    {
+                        toValue: -420,
+                        duration: 800,
+                        useNativeDriver: false,
 
-                }
-            ),
-            Animated.timing(
-                topo,
-                {
-                    toValue: 0,
-                    duration: 900,
-                    useNativeDriver: false,
-                }
-            ),
-            Animated.timing(
-                altura,
-                {
-                    toValue: 330,
-                    duration: 800,
-                    useNativeDriver: false,
-                }
-            ),
-            Animated.timing(
-                baixo,
-                {
-                    toValue: 100,
-                    duration: 500,
-                    useNativeDriver: false,
-                }
-            )
+                    }
+                ),
 
-        ]).start();
+                Animated.timing(
+                    topo,
+                    {
+                        toValue: 0,
+                        duration: 900,
+                        useNativeDriver: false,
+                    }
+                ),
+                Animated.timing(
+                    altura,
+                    {
+                        toValue: 330,
+                        duration: 800,
+                        useNativeDriver: false,
+                    }
+                ),
+                Animated.timing(
+                    baixo,
+                    {
+                        toValue: 100,
+                        duration: 500,
+                        useNativeDriver: false,
+                    }
+                )
+
+            ]).start();
     };
 
 
@@ -130,7 +131,7 @@ const styles = StyleSheet.create({
     },
     container1: {
         position: 'absolute',
-        backgroundColor: '#e9e9e9',
+        backgroundColor: '#fff',
         width: '110%',
         height: '42%',
         alignSelf: 'center',
@@ -149,6 +150,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderTopLeftRadius: 60,
         borderBottomRightRadius: 60,
+        shadowColor: 'black',
+        shadowOffset: {
+            width: 0,
+            height: 4
+        },
+        shadowRadius: 2,
+        shadowOpacity: .1,
     },
 
 
