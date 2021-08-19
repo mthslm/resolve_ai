@@ -14,8 +14,13 @@ export default function Home() {
     const baixo = useRef(new Animated.Value(100)).current;
     const altura = useRef(new Animated.Value(330)).current;
     const topo = useRef(new Animated.Value(0)).current;
+    const [tela, setTela] = useState(<Entrar/>);
+
 
     window.cadastro = () => {
+        setTimeout(() => {
+            setTela(<Cadastrar/>)
+        }, 800),
         Animated.sequence([
             Animated.timing(
                 baixo,
@@ -26,7 +31,6 @@ export default function Home() {
 
                 }
             ),
-
             Animated.timing(
                 topo,
                 {
@@ -56,6 +60,9 @@ export default function Home() {
     };
 
     window.logar = () => {
+        setTimeout(() => {
+            setTela(<Entrar/>)
+        }, 800),
         Animated.sequence([
             Animated.timing(
                 baixo,
@@ -66,7 +73,6 @@ export default function Home() {
 
                 }
             ),
-
             Animated.timing(
                 topo,
                 {
@@ -109,7 +115,7 @@ export default function Home() {
             </View>
 
             <Animated.View style={[styles.container2, { bottom: baixo, height: altura }]}>
-                <Entrar />
+                {tela}
             </Animated.View>
             <StatusBar style="dark" />
 

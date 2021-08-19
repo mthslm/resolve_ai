@@ -3,23 +3,23 @@ import React, { useState, useRef } from 'react';
 import { Button, Text, StyleSheet, View, TextInput, KeyboardAvoidingView, TouchableOpacity, ImageBackground, Image, Animated } from 'react-native';
 import Logo from '../assets/resolveailogocolorida.fw.svg';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { MaterialIcons, MaterialCommunityIcons, Entypo } from '@expo/vector-icons';
+import { MaterialIcons, MaterialCommunityIcons, Entypo, FontAwesome, FontAwesome5   } from '@expo/vector-icons';
 
 export default function Home_Cadastrar() {
     return (
         <View style={{position: 'absolute',height: '100%', width: '100%', alignItems: 'center'}}>
-            <Text style={{ textAlign: 'center', margin: '5%', color: '#b7b7b7', }} >Preencha os dados para se cadastrar!</Text>
+            <Text style={{ textAlign: 'center', margin: '7%', color: '#b7b7b7', }} >Preencha os dados para se cadastrar na nossa comunidade!</Text>
                 <View style={{ width: '100%', alignItems: 'center', }}>
-                    <MaterialIcons style={{ position: 'absolute', right: '7%', top: '20%' }} name="email" size={24} color="#b7b7b7" />
+                    <FontAwesome style={{ position: 'absolute', right: '7%', top: '20%' }} name="user" size={24} color="#b7b7b7" />
                     <TextInput style={{ position: 'absolute' }} placeholder="Nome" style={styles.input} />
                 </View>
 
                 <View style={{ width: '100%', alignItems: 'center' }}>
-                    <Entypo style={{ position: 'absolute', right: '7%', top: '20%' }} name="lock" size={24} color="#b7b7b7" />
+                <MaterialIcons style={{ position: 'absolute', right: '7%', top: '20%' }} name="email" size={24} color="#b7b7b7" />
                     <TextInput style={{ position: 'absolute' }} placeholder="Email" style={styles.input} />
                 </View>
                 <View style={{ width: '100%', alignItems: 'center' }}>
-                    <Entypo style={{ position: 'absolute', right: '7%', top: '20%' }} name="lock" size={24} color="#b7b7b7" />
+                    <Entypo style={{ position: 'absolute', right: '7%', top: '20%' }} name="lock-open" size={24} color="#b7b7b7" />
                     <TextInput style={{ position: 'absolute' }} placeholder="Senha" style={styles.input} />
                 </View>
                 <View style={{ width: '100%', alignItems: 'center' }}>
@@ -27,14 +27,14 @@ export default function Home_Cadastrar() {
                     <TextInput style={{ position: 'absolute' }} placeholder="Repita a senha" style={styles.input} />
                 </View>
                 <View style={{ width: '100%', alignItems: 'center' }}>
-                    <Entypo style={{ position: 'absolute', right: '7%', top: '20%' }} name="lock" size={24} color="#b7b7b7" />
+                    <MaterialIcons style={{ position: 'absolute', right: '7%', top: '20%' }} name="date-range" size={24} color="#b7b7b7" />
                     <TextInput style={{ position: 'absolute' }} placeholder="Data de nascimento" style={styles.input} />
                 </View>
                 <TouchableOpacity style={styles.btnEntrar} onPress={() => alert('clicou em entrar')}>
                     <Text style={{ color: '#ffff', fontWeight: 'bold' }}>Cadastrar</Text>
                 </TouchableOpacity>
                 <Text style={{ marginTop: '4%', color: '#b7b7b7' }}>Você já possui uma conta?</Text>
-                <TouchableOpacity onPress={[logar]}>
+                <TouchableOpacity onPress={logar}>
                     <Text style={{ marginBottom: '2%', marginTop: '1%', color: '#484848', opacity: .8 }}>Entre agora mesmo!</Text>
                 </TouchableOpacity>
         </View>
