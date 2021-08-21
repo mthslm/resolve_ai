@@ -108,8 +108,6 @@ export default function Home() {
 
         <KeyboardAvoidingView behavior="position" style={styles.containerGlobal} enabled>
 
-            <Cadastrar cadastro={cadastro}/>
-
             <ImageBackground style={{ width: '100%', height: '110%', top: '-10%', }} source={require('../assets/background.jpg')}>
                 <Animated.View style={{ top: topo }}><Text style={{ marginTop: "78%", color: '#ffff', fontWeight: 'bold', fontSize: 30, textShadowColor: 'black', textShadowRadius: 1.4, left: '20%' }}>Mapeie problemas. Encontre soluções!</Text></Animated.View>
             </ImageBackground>
