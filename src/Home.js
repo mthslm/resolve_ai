@@ -1,9 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useRef } from 'react';
-import { Button, Text, StyleSheet, View, TextInput, KeyboardAvoidingView, TouchableOpacity, ImageBackground, Image, Animated, Appearance } from 'react-native';
-import Logo from '../assets/resolveailogocolorida.fw.svg';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { MaterialIcons, MaterialCommunityIcons, Entypo } from '@expo/vector-icons';
+import { Text, StyleSheet, View, KeyboardAvoidingView, ImageBackground, Animated } from 'react-native';
 import Entrar from '../src/Home_Entrar';
 import Cadastrar from '../src/Home_Cadastrar';
 
