@@ -8,7 +8,7 @@ export default function App() {
   {
     setTimeout(() => {
       setTela(<Home/>)
-    }, 8000);
+    }, 1000);
   }
 
   return (

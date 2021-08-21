@@ -5,9 +5,9 @@ import Logo from '../assets/resolveailogocolorida.fw.svg';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { MaterialIcons, MaterialCommunityIcons, Entypo, FontAwesome, FontAwesome5   } from '@expo/vector-icons';
 
-export default function Home_Cadastrar() {
+export default function Home_Cadastrar(props) {
     return (
-        <View style={{position: 'absolute',height: '100%', width: '100%', alignItems: 'center'}}>
+        <View style={{position: 'absolute',height: '100%', width: '100%', alignItems: 'center',display: props.display}}>
             <Text style={{ textAlign: 'center', margin: '7%', color: '#b7b7b7', }} >Preencha os dados para se cadastrar na nossa comunidade!</Text>
                 <View style={{ width: '100%', alignItems: 'center', }}>
                     <FontAwesome style={{ position: 'absolute', right: '7%', top: '20%' }} name="user" size={24} color="#b7b7b7" />
@@ -34,7 +34,7 @@ export default function Home_Cadastrar() {
                     <Text style={{ color: '#ffff', fontWeight: 'bold' }}>Cadastrar</Text>
                 </TouchableOpacity>
                 <Text style={{ marginTop: '4%', color: '#b7b7b7' }}>Você já possui uma conta?</Text>
-                <TouchableOpacity onPress={logar}>
+                <TouchableOpacity onPress={()=>props.logar()}>
                     <Text style={{ marginBottom: '2%', marginTop: '1%', color: '#484848', opacity: .8 }}>Entre agora mesmo!</Text>
                 </TouchableOpacity>
         </View>

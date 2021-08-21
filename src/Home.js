@@ -14,98 +14,101 @@ export default function Home() {
     const baixo = useRef(new Animated.Value(100)).current;
     const altura = useRef(new Animated.Value(330)).current;
     const topo = useRef(new Animated.Value(0)).current;
-    const [tela, setTela] = useState(<Entrar />);
+    const [displayCadastro, setDisplayCadastro] = useState('flex');
+    const [displayLogar, setDisplayLogar] = useState('none');
 
-
-    window.cadastro = () => {
+    const cadastro = () => {
         setTimeout(() => {
-            setTela(<Cadastrar />)
+            setDisplayCadastro('none'),
+            setDisplayLogar('flex')
         }, 800),
-            Animated.sequence([
-                Animated.timing(
-                    baixo,
-                    {
-                        toValue: -280,
-                        duration: 800,
-                        useNativeDriver: false,
+        Animated.sequence([
+            Animated.timing(
+                baixo,
+                {
+                    toValue: -280,
+                    duration: 800,
+                    useNativeDriver: false,
 
-                    }
-                ),
-                Animated.timing(
-                    topo,
-                    {
-                        toValue: -170,
-                        duration: 900,
-                        useNativeDriver: false,
-                    }
-                ),
-                Animated.timing(
-                    altura,
-                    {
-                        toValue: 500,
-                        duration: 800,
-                        useNativeDriver: false,
-                    }
-                ),
-                Animated.timing(
-                    baixo,
-                    {
-                        toValue: 100,
-                        duration: 500,
-                        useNativeDriver: false,
-                    }
-                )
+                }
+            ),
+            Animated.timing(
+                topo,
+                {
+                    toValue: -170,
+                    duration: 900,
+                    useNativeDriver: false,
+                }
+            ),
+            Animated.timing(
+                altura,
+                {
+                    toValue: 500,
+                    duration: 800,
+                    useNativeDriver: false,
+                }
+            ),
+            Animated.timing(
+                baixo,
+                {
+                    toValue: 100,
+                    duration: 500,
+                    useNativeDriver: false,
+                }
+            )
 
-            ]).start();
+        ]).start();
     };
 
-    window.logar = () => {
+    const logar = () => {
         setTimeout(() => {
-            setTela(<Entrar />)
+            setDisplayCadastro('flex'),
+            setDisplayLogar('none')
         }, 800),
-            Animated.sequence([
-                Animated.timing(
-                    baixo,
-                    {
-                        toValue: -420,
-                        duration: 800,
-                        useNativeDriver: false,
+        Animated.sequence([
+            Animated.timing(
+                baixo,
+                {
+                    toValue: -420,
+                    duration: 800,
+                    useNativeDriver: false,
 
-                    }
-                ),
+                }
+            ),
 
-                Animated.timing(
-                    topo,
-                    {
-                        toValue: 0,
-                        duration: 900,
-                        useNativeDriver: false,
-                    }
-                ),
-                Animated.timing(
-                    altura,
-                    {
-                        toValue: 330,
-                        duration: 800,
-                        useNativeDriver: false,
-                    }
-                ),
-                Animated.timing(
-                    baixo,
-                    {
-                        toValue: 100,
-                        duration: 500,
-                        useNativeDriver: false,
-                    }
-                )
+            Animated.timing(
+                topo,
+                {
+                    toValue: 0,
+                    duration: 900,
+                    useNativeDriver: false,
+                }
+            ),
+            Animated.timing(
+                altura,
+                {
+                    toValue: 330,
+                    duration: 800,
+                    useNativeDriver: false,
+                }
+            ),
+            Animated.timing(
+                baixo,
+                {
+                    toValue: 100,
+                    duration: 500,
+                    useNativeDriver: false,
+                }
+            )
 
-            ]).start();
+        ]).start();
     };
-
 
     return (
 
         <KeyboardAvoidingView behavior="position" style={styles.containerGlobal} enabled>
+
+            <Cadastrar cadastro={cadastro}/>
 
             <ImageBackground style={{ width: '100%', height: '110%', top: '-10%', }} source={require('../assets/background.jpg')}>
                 <Animated.View style={{ top: topo }}><Text style={{ marginTop: "78%", color: '#ffff', fontWeight: 'bold', fontSize: 30, textShadowColor: 'black', textShadowRadius: 1.4, left: '20%' }}>Mapeie problemas. Encontre soluções!</Text></Animated.View>
@@ -116,7 +119,8 @@ export default function Home() {
             </View>
 
             <Animated.View style={[styles.container2, { bottom: baixo, height: altura }]}>
-                {tela}
+                <Entrar display={displayCadastro} cadastro={cadastro}/>
+                <Cadastrar display={displayLogar} logar={logar}/>
             </Animated.View>
             <StatusBar style="dark" />
 

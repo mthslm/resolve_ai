@@ -5,10 +5,10 @@ import Logo from '../assets/resolveailogocolorida.fw.svg';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { MaterialIcons, MaterialCommunityIcons, Entypo } from '@expo/vector-icons';
 
-export default function Home_Entrar() {
+export default function Home_Entrar(props) {
    
     return (
-        <View style={{position: 'absolute',height: '100%', width: '100%', alignItems: 'center'}}>
+        <View style={{position: 'absolute',height: '100%', width: '100%', alignItems: 'center', display: props.display}}>
             <Text style={{ textAlign: 'center', margin: '5%', color: '#b7b7b7', }} >Bem-vindo! Entre ou cadastre-se para desfrutar da nossa comunidade!</Text>
                 <View style={{ width: '100%', alignItems: 'center', }}>
                     <MaterialIcons style={{ position: 'absolute', right: '7%', top: '20%' }} name="email" size={24} color="#b7b7b7" />
@@ -23,7 +23,7 @@ export default function Home_Entrar() {
                     <Text style={{ color: '#ffff', fontWeight: 'bold' }}>Entrar</Text>
                 </TouchableOpacity>
                 <Text style={{ marginTop: '4%', color: '#b7b7b7' }}>Ainda não tem uma conta?</Text>
-                <TouchableOpacity onPress={cadastro}>
+                <TouchableOpacity onPress={() => props.cadastro()}>
                     <Text style={{ marginBottom: '2%', marginTop: '1%', color: '#484848', opacity: .8 }}>Cadastre-se agora!</Text>
                 </TouchableOpacity>
         </View>
